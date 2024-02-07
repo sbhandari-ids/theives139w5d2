@@ -1,0 +1,21 @@
+ {%extends 'base.html'%}
+
+{%block title%} 
+Pokemon 
+{%endblock%}
+ 
+{%block content%} 
+{%include './includes/navbar.html'%}        
+<form method = 'POST'>
+    <div class="mb-3">
+        <label for="pokemon_name_id" class="form-label">Pokemon Name (or ID)</label>
+        <input type="text" name="pokemon_name_id" class="form-control" id="pokemon_name_id" aria-describedby="emailHelp">
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{%endblock%}
+
+
