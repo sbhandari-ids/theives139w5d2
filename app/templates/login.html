@@ -3,31 +3,27 @@
 {%block title%} Login {%endblock%}
 
 {%block styles%} 
-<link rel = "stylesheet" href = " " >
+<link rel = "stylesheet" href = "../static/styles/login.css " >
 {%endblock%}
 
     {%block content%} 
     
     {%include './includes/navbar.html'%}  
-   
+   <div class="flex-container">
     <form method = 'POST'>
-      {{loginForm.hidden_tag()}}
+      {{form.hidden_tag()}}
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          {{loginForm.email(class='form-control', id="email")}}
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
+          <label for="email" class="form-label">Email</label>
+          {{form.email(class='form-control', id="email")}}
+          
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          {{loginForm.email(class='form-control', id="email")}}
+          <label for="password" class="form-label">Password</label>
+          {{form.password(class='form-control', id="password")}}
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        {{loginForm.submit_btn}}
+       
+        {{form.submit_btn(class = "btn btn-primary", id = 'btn_login')}}
       </form>
-
+      </div>
 
       {%endblock%}
 
